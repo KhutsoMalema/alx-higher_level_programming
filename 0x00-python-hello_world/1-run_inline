@@ -1,3 +1,17 @@
-#!/usr/bin/python3
-# Python script to print the specified message
-print("Programming is like building a multilingual puzzle")
+#!/bin/bash
+
+# Check if the environment variable $PYCODE is set
+if [ -z "$PYCODE" ]; then
+    echo "Error: Environment variable \$PYCODE is not set."
+    exit 1
+fi
+
+# Create a temporary Python script file
+TMP_FILE=$(mktemp)
+echo "$PYCODE" > "$TMP_FILE"
+
+# Run the Python script
+python "$TMP_FILE"
+
+# Remove the temporary Python script file
+rm -f "$TMP_FILE"
