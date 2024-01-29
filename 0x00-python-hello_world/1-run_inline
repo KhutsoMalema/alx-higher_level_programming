@@ -1,2 +1,3 @@
-#!/bin/bash
-python3 -c  “$PYCODE”
+#!/usr/bin/python3
+# Python script to print the specified message
+print("Programming is like building a multilingual puzzle")
